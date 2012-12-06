@@ -1,6 +1,6 @@
-<form action="index.php" method="post">
+<form action="filter.php" method="post">
     <fieldset>
-        <select name = "Group Size">
+        <select name = "Group_Size">
             <option value='0'></option>
             <?php
               $value = 1;
