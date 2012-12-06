@@ -83,10 +83,10 @@
             $id3 = query("SELECT * FROM suites WHERE id = ?", $suite3);
             $id4 = query("SELECT * FROM suites WHERE id = ?", $suite4);
             
-            $name1 = "$id1["entryway"]$id1["number"]";
-            $name2 = "$id2["entryway"]$id2["number"]";
-            $name3 = "$id3["entryway"]$id3["number"]";
-            $name4 = "$id4["entryway"]$id4["number"]";
+            $name1 = "{$id1['entryway']}{$id1['number']}";
+            $name2 = "{$id2['entryway']}{$id2['number']}";
+            $name3 = "{$id3['entryway']}{$id3['number']}";
+            $name4 = "{$id4['entryway']}{$id4['number']}";
             
             $crm = max($id1["commonroom"],$id2["commonroom"],$id3["commonroom"],$id4["commonroom"]);
             

@@ -1,4 +1,4 @@
-<form action="login.php" method="post">
+<form action="registration.php" method="post">
     <fieldset>
         <div class="control-group">
             <input autofocus name="username" placeholder="Username" type="text"/>
@@ -7,10 +7,13 @@
             <input name="password" placeholder="Password" type="password"/>
         </div>
         <div class="control-group">
-            <button type="submit" class="btn">Log In</button>
+            <input name="confirmation" placeholder="Confirm Password" type="password"/>
+        </div>
+        <div class="control-group">
+            <button type="submit" class="btn">Register</button>
         </div>
     </fieldset>
 </form>
 <div>
-    or <a href="registration.php">register</a> for an account
+    or <a href="login.php">log in</a>
 </div>

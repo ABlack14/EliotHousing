@@ -2,7 +2,7 @@
             </div>
 
             <div id="bottom">
-                Copyright &#169; John Harvard
+                CS50 2012. Amanda Black & Kyle Krueger
             </div>
 
         </div>
