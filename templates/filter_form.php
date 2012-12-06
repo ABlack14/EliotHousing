@@ -27,27 +27,19 @@
                 
                 else
                 {
-                foreach ($array as $a)
+                foreach ($table as $t)
                     {
                         print("<tr>");
-                        print("<td>" . $a["symbol"] . "</td>");      
-                        print("<td>" . $a["name"] . "</td>");
-                        print("<td>" . $a["shares"] . "</td>");
-                        print("<td>" . "$" . number_format($a["price"],2) . "</td>");
-                        print("<td>" . "$" . number_format($a["total"],2) . "</td>");      
-                        print("</tr>");
-                        
+                        print("<td>" . $t["n"] . "</td>");      
+                        print("<td>" . $t["suite1"] . "</td>");
+                        print("<td>" . $t["suite2"] . "</td>");
+                        print("<td>" . $t["suite3"] . "</td>");      
+                        print("<td>" . $t["suite4"] . "</td>");
+                        print("<td>" . $t["crm"] . "</td>");
+                        print("<td>" . $t["avg"] . "</td>");
+                        print("</tr>");     
                     }
-                }
-                // print cash
-                print("<tr>");
-                print("<td>" . "CASH" . "</td>");
-                print("<td/td>");
-                print("<td/td>");
-                print("<td/td>");
-                print("<td>" . "$" . number_format($cash,2) . "</td>"); 
-                print("</tr>");    
+                }    
             ?>
         </table>    
-
 </div>
