@@ -31,10 +31,10 @@
                     {
                         print("<tr>");
                         print("<td>" . $t["n"] . "</td>");      
-                        print("<td>" . $t["suite1"] . "</td>");
-                        print("<td>" . $t["suite2"] . "</td>");
-                        print("<td>" . $t["suite3"] . "</td>");      
-                        print("<td>" . $t["suite4"] . "</td>");
+                        print("<td>" . $t["name1"] . "</td>");
+                        print("<td>" . $t["name2"] . "</td>");
+                        print("<td>" . $t["name3"] . "</td>");      
+                        print("<td>" . $t["name4"] . "</td>");
                         print("<td>" . $t["crm"] . "</td>");
                         print("<td>" . $t["avg"] . "</td>");
                         print("</tr>");     
