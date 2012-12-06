@@ -30,13 +30,13 @@
                 foreach ($table as $t)
                     {
                         print("<tr>");
-                        print("<td>" . $t["n"] . "</td>");      
-                        print("<td>" . $t["name1"] . "</td>");
-                        print("<td>" . $t["name2"] . "</td>");
-                        print("<td>" . $t["name3"] . "</td>");      
-                        print("<td>" . $t["name4"] . "</td>");
-                        print("<td>" . $t["crm"] . "</td>");
-                        print("<td>" . $t["avg"] . "</td>");
+                        print("<td>" . $t[0] . "</td>");      
+                        print("<td>" . $t[1] . "</td>");
+                        print("<td>" . $t[2] . "</td>");
+                        print("<td>" . $t[3] . "</td>");      
+                        print("<td>" . $t[4] . "</td>");
+                        print("<td>" . $t[5] . "</td>");
+                        print("<td>" . $t[6] . "</td>");
                         print("</tr>");     
                     }
                 }    
