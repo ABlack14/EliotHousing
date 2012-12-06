@@ -3,7 +3,7 @@
     $n = //n if junior, n+1 if senior
     
     $rows = query("SELECT * FROM joining_suites WHERE n = ?", $n);
-    $rows2  = query("SELECT * FROM rooms");
+    $rows2  = query("SELECT * FROM suites");
 
     $id = $rows["id"];
     $suite1 = $rows2["suite1"];
@@ -43,10 +43,10 @@
         }
     }
     
-    $suite1 = $rows["suite1"];
-    $suite2 = $rows["suite2"];
-    $suite3 = $rows["suite3"];
-    $suite4 = $rows["suite4"];
+    $suite1 = "$rows2["entryway"]$rows2["number"]";
+    $suite2 = "$rows2["entryway"]$rows2["number"]";
+    $suite3 = "$rows2["entryway"]$rows2["number"]";
+    $suite4 = "$rows2["entryway"]$rows2["number"]";
     
     $table[] = [$n, $suite1, $suite2, $suite3, $suite4, $crm, $avg);
     
