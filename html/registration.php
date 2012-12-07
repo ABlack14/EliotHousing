@@ -33,7 +33,7 @@
         
         //add user to database    
         $result = query("INSERT INTO users (username, hash) VALUES(?, ?)",
-$_POST["username"], crypt($_POST["password"]));
+            $_POST["username"], crypt($_POST["password"]));
         if ($result === false)
             apologize("Username already exists.");
 
