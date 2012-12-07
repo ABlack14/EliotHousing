@@ -1,5 +1,7 @@
 <form action="filter.php" method="post">
     <fieldset>
+        Group Size:
+        <br/>
         <select name = "Group_Size">
             <option value='0'></option>
             <?php
@@ -12,6 +14,8 @@
               }  
             ?>
         </select>
+        <br/>
+        Year:
         <br/>
         <select name = "Year">
             <option value='0'></option>
