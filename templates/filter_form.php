@@ -1,6 +1,9 @@
+<form action="filter.php" method="post">  
+<fieldset> 
     <ul class="nav nav-pills">
         <li><a href="index.php">New Search</a></li>
         <li><a href="favorite.php">Favorites</a></li>
+        <li><a href="password.php">Change Password</a></li>
         <li><a href="logout.php">Log Out</a></li>
     </ul>
 
@@ -63,8 +66,9 @@
                 
                 else
                 {
-                foreach ($table as $t)
+                for ($i = 0; $i < $counter; ++$i)
                     {
+                        <select name = "$i">
                         print("<tr>");
                         print("<td>" . $t[0] . "</td>");      
                         print("<td>" . $t[1] . "</td>");
@@ -73,9 +77,17 @@
                         print("<td>" . $t[4] . "</td>");
                         print("<td>" . $t[5] . "</td>");
                         print("<td>" . $t[6] . "</td>");
-                        print("</tr>");     
+                        </select>  
+                        "<td>"
+                        <div class="control-group">
+                        button type="submit" class="btn">Go!</button>
+                        </div>
+                        "</td>"
+                        print("</tr>");   
                     }
                 }    
             ?>
         </table>    
 </div>
+</form>
+</fieldset>
