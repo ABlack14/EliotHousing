@@ -46,7 +46,7 @@
             
             $crm = max($id1[0]["commonroom"],$id2[0]["commonroom"]);
             
-            $avg = ((($id1[0]["averagebedroom"]*$id1[0]["n"])+($id2[0]["averagebedroom"]*$id2[0]["n"]))/$n);
+            $avg = round((($id1[0]["averagebedroom"]*$id1[0]["n"])+($id2[0]["averagebedroom"]*$id2[0]["n"]))/$n);
      
             $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg];
         }
@@ -68,7 +68,7 @@
             
             $crm = max($id1[0]["commonroom"],$id2[0]["commonroom"],$id3[0]["commonroom"]);
             
-            $avg = ((($id1[0]["averagebedroom"]*$id1[0]["n"])+($id2[0]["averagebedroom"]*$id2[0]["n"])+($id3[0]["averagebedroom"]
+            $avg = round((($id1[0]["averagebedroom"]*$id1[0]["n"])+($id2[0]["averagebedroom"]*$id2[0]["n"])+($id3[0]["averagebedroom"]
               *$id3[0]["n"]))/$n);
      
             $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg];
@@ -93,7 +93,7 @@
             
             $crm = max($id1[0]["commonroom"],$id2[0]["commonroom"],$id3[0]["commonroom"],$id4[0]["commonroom"]);
             
-            $avg = ((($id1[0]["averagebedroom"]*$id1[0]["n"])+($id2[0]["averagebedroom"]*$id2[0]["n"])+($id3[0]["averagebedroom"]
+            $avg = round((($id1[0]["averagebedroom"]*$id1[0]["n"])+($id2[0]["averagebedroom"]*$id2[0]["n"])+($id3[0]["averagebedroom"]
               *$id3[0]["n"])+($id4[0]["averagebedroom"]*$id4[0]["n"]))/$n);
               
             $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg];
