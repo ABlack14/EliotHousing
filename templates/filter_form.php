@@ -35,6 +35,7 @@
            <input type="checkbox" name="filter" checked="checked" onchange="load();" value="1"> M 
            <input type="checkbox" name="filter" checked="checked" onchange="load();" value="1"> N 
            <input type="checkbox" name="filter" checked="checked" onchange="load();" value="1"> O<br/>
+           <br/>
         </form>
     </div>
         <table class="table table-striped">
@@ -66,9 +67,9 @@
                 
                 else
                 {
-                for ($i = 0; $i < $counter; ++$i)
+                foreach ($table as $t)
                     {
-                        <select name = "$i">
+                        //<select name = "$i">
                         print("<tr>");
                         print("<td>" . $t[0] . "</td>");      
                         print("<td>" . $t[1] . "</td>");
@@ -77,16 +78,18 @@
                         print("<td>" . $t[4] . "</td>");
                         print("<td>" . $t[5] . "</td>");
                         print("<td>" . $t[6] . "</td>");
-                        </select>  
-                        "<td>"
+                        //</select>
+                        ?>  
+                        <td>
                         <div class="control-group">
-                        button type="submit" class="btn">Go!</button>
+                        <button type="submit" class="btn">Add</button>
                         </div>
-                        "</td>"
-                        print("</tr>");   
+                        </td>
+                        </tr>
+                        <?php 
                     }
                 }    
-            ?>
+           ?> 
         </table>    
 </div>
 </form>

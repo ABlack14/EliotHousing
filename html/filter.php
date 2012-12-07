@@ -102,12 +102,13 @@
         $counter++;
     }
     
-    render("filter_form.php", ["table" => $table]; "filter_form.php", ["counter" => $counter]);
+    render("filter_form.php", ["table" => $table, "counter" => $counter]);
     
+    /*
     foreach ($i as $i)
     {
         $favorites = query("INSERT INTO favorites (n, suite1, suite2, suite3, suite4, commonroom, averagebedroom) 
            VALUES (?, ?, ?, ?, ?, ?, ?)", $_POST["$i"]);
     } 
-    
+    */
 ?>
