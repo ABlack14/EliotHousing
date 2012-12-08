@@ -68,7 +68,7 @@
                 {
                 foreach ($table as $t)
                     {
-                        print("<tr ") print("class= \"floor" . $t[8] . " " . $t[9] . "\" /tr>"); 
+                        print("<tr "); print("class= \"floor" . $t[8] . " " . $t[9] . "\" /tr>"); 
                         print("<td>" . $t[0] . "</td>");      
                         print("<td>" . $t[1] . "</td>");
                         print("<td>" . $t[2] . "</td>");
@@ -84,7 +84,7 @@
                         </div>
                         </td>
                         </tr>
-                        <?php 
+                        <?php
                     }
                 }    
            ?>
@@ -93,4 +93,21 @@
         </fieldset>
         </form>   
 </div>
+
+<script>
+    $(document).ready(function() {
+        $(":checkbox").click(function() {
+            var id = $(this).attr('id');
+            
+            if($(this).is(":checked")) {
+                $("."+id).show();
+            }else{
+                $("."+id).hide();
+            }
+            
+            return false;
+        });
+    }); 
+</script>
+
 

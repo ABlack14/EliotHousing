@@ -9,13 +9,24 @@
         $n = $_POST["Group_Size"] + 1;
     
     $rows = query("SELECT * FROM joining_suites WHERE n = ?", $n);
-    $rows2 = query("SELECT * FROM suites WHERE n = ?", $n)
+    $rows2 = query("SELECT * FROM suites");
     $table = [];
     $counter = 0;
 
     foreach ($rows as $row)
     {   
         $id = $row["id"];
+        $floor = "";
+        $entry = "";
+        foreach ($rows2 as $r)
+        {
+            if($r["id"] == $id)
+            {
+                $floor = $r["floor"];
+                $entry = $r["entryway"];
+            }    
+        }
+        
         if ($row["suite2"] == 0 && $row["suite1"] != 0)
          {    
             $suite1 = $row["suite1"];
@@ -31,7 +42,7 @@
             
             $avg = $id1[0]["averagebedroom"];
      
-            $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg, $id, $rows2["floor"], $rows2["entryway"];
+            $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg, $id, $floor, $entry];
         }
         
         if ($row["suite3"] == 0 && $row["suite2"] != 0)
@@ -51,7 +62,7 @@
             
             $avg = round((($id1[0]["averagebedroom"]*$id1[0]["n"])+($id2[0]["averagebedroom"]*$id2[0]["n"]))/$n);
      
-            $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg, $id, $rows2["floor"], $rows2["entryway"]];
+            $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg, $id, $floor, $entry];
         }
         
         if ($row["suite4"] == 0 && $row["suite3"] != 0)
@@ -74,7 +85,7 @@
             $avg = round((($id1[0]["averagebedroom"]*$id1[0]["n"])+($id2[0]["averagebedroom"]*$id2[0]["n"])+($id3[0]["averagebedroom"]
               *$id3[0]["n"]))/$n);
      
-            $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg, $id, $rows2["floor"], $rows2["entryway"]];
+            $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg, $id, $floor, $entry];
         }
         
         if ($row["suite4"] != 0)
@@ -99,7 +110,7 @@
             $avg = round((($id1[0]["averagebedroom"]*$id1[0]["n"])+($id2[0]["averagebedroom"]*$id2[0]["n"])+($id3[0]["averagebedroom"]
               *$id3[0]["n"])+($id4[0]["averagebedroom"]*$id4[0]["n"]))/$n);
               
-            $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg, $id, $rows2["floor"], $rows2["entryway"]];
+            $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg, $id, $floor, $entry];
         }
         $counter++;
     }
