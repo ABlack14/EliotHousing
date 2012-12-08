@@ -3,7 +3,16 @@
     // configuration
     require("../includes/config.php");
     
-    
+    // if form was submitted
+    if ($_SERVER["REQUEST_METHOD"] == "POST")
+    {
+        //save suite id
+        $new_suite = $_POST["id"];
+        //get user info
+        $user = $_SESSION["id"];
+        //add favorite to database
+        query("INSERT INTO favorites (user, suite_id) VALUES (?, ?)", $user, $new_suite); 
+    }
     
     query("INSERT INTO favorites (user, suite_id, n, suite1, suite2, suite3, suite4, commonroom, averagebedroom) 
            VALUES (?, ?, ?, ?, ?, ?, ?, ?)", $_SESSION["id"], $table[7], 

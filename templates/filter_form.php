@@ -119,7 +119,6 @@
     data: id,
     success: success(),
     });
-    //query("INSERT INTO favorites (user, suite_id) VALUES (?, ?)", x, y); 
     }
     
     function success() {
