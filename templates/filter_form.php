@@ -36,7 +36,6 @@
         </form>
     </div>
         <form action="favorite.php" method="post">
-        <input type="hidden" name="favorite" value="<?= 1 ?>" /> 
         <fieldset> 
         <table class="table table-striped" id="theTable">
             <?php
@@ -80,7 +79,7 @@
                         ?>  
                         <td>
                         <div class="control-group">
-                        <button type="submit" onclick="favorite(<?= $t[7] ?> )" class="btn">Add </button>
+                        <button type="submit" onclick="favorite( <?= $t[7] ?> )" class="btn">Add </button>
                        
                         </div>
                         </td>
@@ -105,19 +104,27 @@
                 $(this).set_checked(false);                
             }else{
                 $("."+id).hide();
-                $(this).set_checked(true);
-                
+                $(this).set_checked(true); 
             }
-            
             
             return false;
         });
     }); 
     
-   function favorite(x) {
-    alert(x);
-    query("INSERT INTO favorites (user, suite_id) VALUES (?, ?)", $_SESSION["id"], x); 
-   }
+   function favorite(id) {
+    alert(id);
+    $.ajax({
+    type: 'POST',
+    url: favorite.php,
+    data: id,
+    success: success(),
+    });
+    //query("INSERT INTO favorites (user, suite_id) VALUES (?, ?)", x, y); 
+    }
+    
+    function success() {
+    alert("Successfully added to favorites.");  
+    }
 </script>
 
 
