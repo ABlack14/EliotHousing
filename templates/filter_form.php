@@ -116,7 +116,12 @@
             var entryway3 = row[3][0];
             var entryway4 = row[4][0];
             var theFloor = row[1][1];
-            if (true){$("#floor1" + theFloor).checked() && $("#a" + entryway1 || entryway2 || entryway3 || entryway4).checked()){
+            if (true){$("#floor1" + theFloor).is(':checked') || $("#floor2" + theFloor).is(':checked') 
+            && $("#floor3" + theFloor).is(':checked') || $("#floor4" + theFloor).is(':checked') || 
+            $("#floor5" + theFloor).is(':checked') || ($("#a" + entryway1).is(':checked') 
+            || $("#a" + entryway2).is(':checked') || $("#a" + entryway3).is(':checked') || $("#a" + 
+            entryway4).is('checked')) }
+            {
                 var thisRowHtml = "<tr><td>" + row[0] + "</td><td>" + row[1] + 
                     "</td><td>" + row[2] + "</td><td>" + row[3] + "</td><td>" + row[4] + 
                     "</td><td>" + row[5] + "</td><td>" + row[6] + "</td><td>" + 
