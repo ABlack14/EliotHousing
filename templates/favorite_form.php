@@ -1,9 +1,9 @@
-    <ul class="nav nav-pills">
-        <li><a href="index.php">New Search</a></li>
-        <li><a href="favorite.php">Favorites</a></li>
-        <li><a href="logout.php">Log Out</a></li>
-    </ul>
-
+<ul class="nav nav-pills">
+    <li><a href="index.php">New Search</a></li>
+    <li><a href="favorite.php">Favorites</a></li>
+    <li><a href="password.php">Change Password</a></li>
+    <li><a href="logout.php">Log Out</a></li>
+</ul>
 <div>
     
     <table class="table table-striped">
@@ -34,16 +34,16 @@
                  
                 else
                 {
-                foreach ($table as $t)
+                foreach ($favorites as $f)
                     {
                         print("<tr>");
-                        print("<td>" . $t[0] . "</td>");      
-                        print("<td>" . $t[1] . "</td>");
-                        print("<td>" . $t[2] . "</td>");
-                        print("<td>" . $t[3] . "</td>");      
-                        print("<td>" . $t[4] . "</td>");
-                        print("<td>" . $t[5] . "</td>");
-                        print("<td>" . $t[6] . "</td>");
+                        print("<td>" . $f["n"] . "</td>");      
+                        print("<td>" . $f["suite1"] . "</td>");
+                        print("<td>" . $f["suite2"] . "</td>");
+                        print("<td>" . $f["suite3"] . "</td>");      
+                        print("<td>" . $f["suite4"] . "</td>");
+                        print("<td>" . $f["commonroom"] . "</td>");
+                        print("<td>" . $f["averagebedroom"] . "</td>");
                         print("</tr>");     
                     }
                 }    

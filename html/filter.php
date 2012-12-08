@@ -14,6 +14,7 @@
 
     foreach ($rows as $row)
     {   
+        $id = $row["id"];
         if ($row["suite2"] == 0 && $row["suite1"] != 0)
          {    
             $suite1 = $row["suite1"];
@@ -29,7 +30,7 @@
             
             $avg = $id1[0]["averagebedroom"];
      
-            $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg];
+            $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg, $id];
         }
         
         if ($row["suite3"] == 0 && $row["suite2"] != 0)
@@ -49,7 +50,7 @@
             
             $avg = round((($id1[0]["averagebedroom"]*$id1[0]["n"])+($id2[0]["averagebedroom"]*$id2[0]["n"]))/$n);
      
-            $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg];
+            $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg, $id];
         }
         
         if ($row["suite4"] == 0 && $row["suite3"] != 0)
@@ -72,7 +73,7 @@
             $avg = round((($id1[0]["averagebedroom"]*$id1[0]["n"])+($id2[0]["averagebedroom"]*$id2[0]["n"])+($id3[0]["averagebedroom"]
               *$id3[0]["n"]))/$n);
      
-            $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg];
+            $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg, $id];
         }
         
         if ($row["suite4"] != 0)
@@ -97,18 +98,11 @@
             $avg = round((($id1[0]["averagebedroom"]*$id1[0]["n"])+($id2[0]["averagebedroom"]*$id2[0]["n"])+($id3[0]["averagebedroom"]
               *$id3[0]["n"])+($id4[0]["averagebedroom"]*$id4[0]["n"]))/$n);
               
-            $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg];
+            $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg, $id];
         }
         $counter++;
     }
     
     render("filter_form.php", ["table" => $table, "counter" => $counter]);
-    
-    /*
-    foreach ($i as $i)
-    {
-        $favorites = query("INSERT INTO favorites (n, suite1, suite2, suite3, suite4, commonroom, averagebedroom) 
-           VALUES (?, ?, ?, ?, ?, ?, ?)", $_POST["$i"]);
-    } 
-    */
+
 ?>

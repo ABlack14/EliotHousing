@@ -5,11 +5,11 @@
         </div>
         <br/>
         <div class="control-group">
-            <input autofocus name="hash" placeholder="Old Password" type="text"/>
+            <input autofocus name="hash1" placeholder="Old Password" type="text"/>
         </div>
         <br/>
         <div class="control-group">
-            <input autofocus name="hash" placeholder="New Password" type="text"/>
+            <input autofocus name="hash2" placeholder="New Password" type="text"/>
         </div>
         <br/>
         <div class="control-group">
