@@ -34,16 +34,16 @@
                  
                 else
                 {
-                foreach ($favorites as $f)
+                foreach ($table as $t)
                     {
                         print("<tr>");
-                        print("<td>" . $f["n"] . "</td>");      
-                        print("<td>" . $f["suite1"] . "</td>");
-                        print("<td>" . $f["suite2"] . "</td>");
-                        print("<td>" . $f["suite3"] . "</td>");      
-                        print("<td>" . $f["suite4"] . "</td>");
-                        print("<td>" . $f["commonroom"] . "</td>");
-                        print("<td>" . $f["averagebedroom"] . "</td>");
+                        print("<td>" . $t[0] . "</td>");      
+                        print("<td>" . $t[1] . "</td>");
+                        print("<td>" . $t[2] . "</td>");
+                        print("<td>" . $t[3] . "</td>");      
+                        print("<td>" . $t[4] . "</td>");
+                        print("<td>" . $t[5] . "</td>");
+                        print("<td>" . $t[6] . "</td>");
                         print("</tr>");     
                     }
                 }    
