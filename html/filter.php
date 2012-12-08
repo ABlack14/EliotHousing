@@ -3,6 +3,8 @@
     // configuration
     require("../includes/config.php");
     
+    
+    
     if ($_POST["Year"] == 1)
         $n = $_POST["Group_Size"];
     else if ($_POST["Year"] == 2)
