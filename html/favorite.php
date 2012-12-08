@@ -118,6 +118,5 @@
     $favorites = query("SELECT * FROM favorites");
     
     render("favorite_form.php", ["favorites" => $favorites]); */
-    
-    redirect("/filter.php");
+
 ?>
