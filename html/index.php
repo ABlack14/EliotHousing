@@ -3,7 +3,7 @@
     // configuration
     require("../includes/config.php");
 
-    // render portfolio
+    // render home
     render("home.php", ["title" => "Home"]);
 
 ?>
