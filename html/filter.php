@@ -4,17 +4,18 @@
     require("../includes/config.php");
     
     
-    
+    // define number of rooms using group size and year
     if ($_POST["Year"] == 1)
         $n = $_POST["Group_Size"];
     else if ($_POST["Year"] == 2)
         $n = $_POST["Group_Size"] + 1;
     
+    // select rooming options for a particular n
     $rows = query("SELECT * FROM joining_suites WHERE n = ?", $n);
     $rows2 = query("SELECT * FROM suites");
     $table = [];
-    $counter = 0;
 
+    // iterate over every option (with n rooms) to produce the table array
     foreach ($rows as $row)
     {   
         $id = $row["id"];
@@ -29,6 +30,7 @@
             }    
         }
         
+        // only 1 suite in the rooming option
         if ($row["suite2"] == 0 && $row["suite1"] != 0)
          {    
             $suite1 = $row["suite1"];
@@ -47,6 +49,7 @@
             $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg, $id, $floor, $entry];
         }
         
+        // two suites in the rooming option
         if ($row["suite3"] == 0 && $row["suite2"] != 0)
         {    
             $suite1 = $row["suite1"];
@@ -67,6 +70,7 @@
             $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg, $id, $floor, $entry];
         }
         
+        // three suites in the rooming option
         if ($row["suite4"] == 0 && $row["suite3"] != 0)
         {    
             $suite1 = $row["suite1"];
@@ -90,6 +94,7 @@
             $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg, $id, $floor, $entry];
         }
         
+        // four suites in the rooming option
         if ($row["suite4"] != 0)
         {    
             $suite1 = $row["suite1"];
@@ -117,6 +122,7 @@
         $counter++;
     }
     
+    // pass information to filter_form
     render("filter_form.php", ["table" => $table, "counter" => $counter]);
 
 ?>
