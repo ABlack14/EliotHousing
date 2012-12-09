@@ -10,21 +10,24 @@
         $new_suite = $_POST["id"];
         //get user info
         $user = $_SESSION["id"];
-        //add favorite to database
+        //add user and suite id to favorites table
         query("INSERT INTO favorites (user, suite_id) VALUES (?, ?)", $user, $new_suite);
     }
     else
     {
+        // select all suite ids in the favorites table for the user
         $favorite_rows = query("SELECT suite_id FROM favorites WHERE user = ?", $_SESSION["id"]);
-        // get out all the rooms and for each room look up all joing suites to add to the table
         
+        // join the favorites table and joining suites table and select all of the data for the user
         $rows = query("SELECT * FROM favorites AS F
             INNER JOIN joining_suites AS J
             WHERE F.suite_id = J.id AND user= ?", $_SESSION["id"]);
+        // number of rooms
         $n = $rows["0"]["n"];
+        // define the array for the table
         $table = [];
         
-
+        // iterate of each row in the favorites table to produce the table array
         foreach ($rows as $row)
         {   
             if ($row["suite2"] == 0 && $row["suite1"] != 0)
@@ -114,6 +117,7 @@
             }
         }
         
+        // pass the information to favorite_form
         render("favorite_form.php", ["table" => $table]);
         
     }
