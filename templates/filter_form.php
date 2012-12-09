@@ -12,9 +12,7 @@
     <div>
         <strong>Filter Results By:</strong>
         <form name="filters">
-           <strong>View All:</strong> 
            <!-- checkboxes -->
-           <input type="checkbox" id="all" onchange="viewall();" checked="checked"><br/>
            <strong>Floor:</strong>
            <input type="checkbox" id="floor1" checked="checked" value="1"> 1 
            <input type="checkbox" id="floor2" checked="checked" value="2"> 2 
@@ -45,14 +43,14 @@
             <?php
                 // prints table header
                 print("<thead><tr>");
-                print("<th>" . "Number of rooms" . "</th>");      
-                print("<th>" . "Suite1" . "</th>");
-                print("<th>" . "Suite2" . "</th>");
-                print("<th>" . "Suite3" . "</th>");
-                print("<th>" . "Suite4" . "</th>");
-                print("<th>" . "Common Room Size" . "<img src="arrow.png" alt="Arrow" width="100" height="200"> "</th>");
-                print("<th>" . "Average Bedroom Size" . "<img src="arrow.png" alt="Arrow" width="100" height="200"> "</th>");
-                print("<th>" . "Add to Favorites" . "</th>");
+                print("<th style='background-color:#87cefa'>" . "Number of rooms" . "</th>");      
+                print("<th style='background-color:#87cefa'>" . "Suite1" . "</th>");
+                print("<th style='background-color:#87cefa'>" . "Suite2" . "</th>");
+                print("<th style='background-color:#87cefa'>" . "Suite3" . "</th>");
+                print("<th style='background-color:#87cefa'>" . "Suite4" . "</th>");
+                print("<th style='background-color:#87cefa'>" . "Common Room Size" . "<img src='img/arrow.png' width='20' height='40' />" . "</th>");
+                print("<th style='background-color:#87cefa'>" . "Average Bedroom Size" . "<img src='img/arrow.png' width='20' height='40' />" . "</th>");;
+                print("<th style='background-color:#87cefa'>" . "Add Favorite" . "</th>");
                 print("</tr></thead><tbody>");
                 // prints cells of table
                 if (empty($table))
@@ -150,20 +148,4 @@
         $("#theTable").tablesorter();
     });
     
-    // viewall checkbox
-    function viewall()
-    {
-        if($(this).is(":checked")) 
-            {
-                $(A).show();
-                $(this).set_checked(false);                
-            }
-            else
-            {
-                $(A).hide();
-                $(this).set_checked(true); 
-            }
-            
-            return false;
-    }
 </script>

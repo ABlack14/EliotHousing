@@ -119,10 +119,9 @@
               
             $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg, $id, $floor, $entry];
         }
-        $counter++;
     }
     
     // pass information to filter_form
-    render("filter_form.php", ["table" => $table, "counter" => $counter]);
+    render("filter_form.php", ["table" => $table]);
 
 ?>

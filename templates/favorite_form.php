@@ -12,13 +12,13 @@
             <?php
                 // prints header
                 print("<tr>");
-                print("<th>" . "Number of rooms" . "</th>");      
-                print("<th>" . "Suite1" . "</th>");
-                print("<th>" . "Suite2" . "</th>");
-                print("<th>" . "Suite3" . "</th>");
-                print("<th>" . "Suite4" . "</th>");
-                print("<th>" . "Common Room Size" . "</th>");
-                print("<th>" . "Average Bedroom Size" . "</th>");
+                print("<th style='background-color:#87cefa'>" . "Number of rooms" . "</th>");      
+                print("<th style='background-color:#87cefa'>" . "Suite1" . "</th>");
+                print("<th style='background-color:#87cefa'>" . "Suite2" . "</th>");
+                print("<th style='background-color:#87cefa'>" . "Suite3" . "</th>");
+                print("<th style='background-color:#87cefa'>" . "Suite4" . "</th>");
+                print("<th style='background-color:#87cefa'>" . "Common Room Size" . "</th>");
+                print("<th style='background-color:#87cefa'>" . "Average Bedroom Size" . "</th>");
                 print("</tr>");
                 // prints cells of table
                 if (empty($table))
