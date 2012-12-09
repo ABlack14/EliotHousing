@@ -17,7 +17,7 @@
 
     foreach ($rows as $row)
     {   
-        $id = $row["id"];
+        $id = $row["suite1"];
         $floor = "";
         $entry = "";
         foreach ($rows2 as $r)

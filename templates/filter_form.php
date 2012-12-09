@@ -1,7 +1,6 @@
 <ul class="nav nav-pills">
     <li><a href="index.php">New Search</a></li>
     <li><a href="favorite.php">Favorites</a></li>
-    <li><a href="password.php">Change Password</a></li>
     <li><a href="logout.php">Log Out</a></li>
 </ul>
 <div>
@@ -35,7 +34,6 @@
            <br/>
         </form>
     </div>
-        <form action="favorite.php" method="post">
         <fieldset> 
         <table class="table table-striped" id="theTable">
             <?php
@@ -68,7 +66,11 @@
                 {
                 foreach ($table as $t)
                     {
-                        print("<tr "); print("class= \"floor" . $t[8] . " " . $t[9] . "\" /tr>"); 
+                        print("<tr "); print("class= \"floor" . $t[8] . " ");
+                        if ($t[2]){ print($t[2][0] . " ");};
+                        if ($t[3]){ print($t[3][0] . " ");};
+                        if ($t[4]){ print($t[4][0] . " ");};
+                        print($t[9] . "\" /tr>"); 
                         print("<td>" . $t[0] . "</td>");      
                         print("<td>" . $t[1] . "</td>");
                         print("<td>" . $t[2] . "</td>");
@@ -90,8 +92,7 @@
            ?>
            </tbody> 
         </table> 
-        </fieldset>
-        </form>   
+        </fieldset>  
 </div>
 
 <script>
@@ -114,16 +115,20 @@
    function favorite(id) {
     alert(id);
     $.ajax({
-    type: 'POST',
-    url: favorite.php,
-    data: id,
-    success: success(),
+        type: 'POST',
+        url: 'favorite.php',
+        data: {'id': id},
+        success: success(),
     });
-    }
+   }
     
     function success() {
     alert("Successfully added to favorites.");  
     }
+    
+    $(function(){
+        $("#theTable").tablesorter();
+    });
 </script>
 
 
