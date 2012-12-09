@@ -1,8 +1,9 @@
 <ul class="nav nav-pills">
-    <li><a href="index.php">New Search</a></li>
-    <li><a href="favorite.php">Favorites</a></li>
-    <li><a href="password.php">Change Password</a></li>
-    <li><a href="logout.php">Log Out</a></li>
+    <center>
+    <a href="index.php">New Search</a>    
+    <a href="favorite.php">Favorites</a>    
+    <a href="logout.php">Log Out</a>    
+    </center>
 </ul>
 <div>
     

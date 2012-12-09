@@ -1,14 +1,18 @@
+<div style="align:center">
 <ul class="nav nav-pills">
-    <li><a href="index.php">New Search</a></li>
-    <li><a href="favorite.php">Favorites</a></li>
-    <li><a href="logout.php">Log Out</a></li>
+    <center>
+    <a href="index.php">New Search</a>    
+    <a href="favorite.php">Favorites</a>    
+    <a href="logout.php">Log Out</a>    
+    </center>
 </ul>
+</div>
 <div>
     <div>
         <strong>Filter Results By:</strong>
         <form name="filters">
            <strong>View All:</strong> 
-           <input type="checkbox" id="all" checked="checked"><br/>
+           <input type="checkbox" id="all" onchange="viewall();" checked="checked"><br/>
            <strong>Floor:</strong>
            <input type="checkbox" id="floor1" checked="checked" value="1"> 1 
            <input type="checkbox" id="floor2" checked="checked" value="2"> 2 
@@ -96,14 +100,19 @@
 </div>
 
 <script>
-    $(document).ready(function() {
-        $(":checkbox").click(function() {
+    $(document).ready(function() 
+    {
+        $(":checkbox").click(function() 
+        {
             var id = $(this).attr('id');
             
-            if($(this).is(":checked")) {
+            if($(this).is(":checked")) 
+            {
                 $("."+id).show();
                 $(this).set_checked(false);                
-            }else{
+            }
+            else
+            {
                 $("."+id).hide();
                 $(this).set_checked(true); 
             }
@@ -112,9 +121,10 @@
         });
     }); 
     
-   function favorite(id) {
-    alert(id);
-    $.ajax({
+   function favorite(id) 
+   {
+    $.ajax(
+    {
         type: 'POST',
         url: 'favorite.php',
         data: {'id': id},
@@ -122,13 +132,29 @@
     });
    }
     
-    function success() {
-    alert("Successfully added to favorites.");  
+    function success() 
+    {
+        alert("Successfully added to favorites.");  
     }
     
-    $(function(){
+    $(function()
+    {
         $("#theTable").tablesorter();
     });
+    
+    function viewall()
+    {
+        if($(this).is(":checked")) 
+            {
+                $(A).show();
+                $(this).set_checked(false);                
+            }
+            else
+            {
+                $(A).hide();
+                $(this).set_checked(true); 
+            }
+            
+            return false;
+    }
 </script>
-
-

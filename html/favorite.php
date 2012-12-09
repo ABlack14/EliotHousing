@@ -15,12 +15,15 @@
     }
     else
     {
-        $favorite_rows = query("SELECT * FROM favorites WHERE id = ?", $_SESSION["id"]);
+        $favorite_rows = query("SELECT suite_id FROM favorites WHERE user = ?", $_SESSION["id"]);
         // get out all the rooms and for each room look up all joing suites to add to the table
         
-        $rows = query("SELECT * FROM joining_suites WHERE id = ?", $new_suite);
+        $rows = query("SELECT * FROM favorites AS F
+            INNER JOIN joining_suites AS J
+            WHERE F.suite_id = J.id AND user= ?", $_SESSION["id"]);
+        $n = $rows["0"]["n"];
         $table = [];
-        $counter = 0;
+        
 
         foreach ($rows as $row)
         {   
@@ -109,17 +112,9 @@
                   
                 $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg];
             }
-            $counter++;
         }
         
         render("favorite_form.php", ["table" => $table]);
         
-        /* or 
-        query("INSERT INTO favorites (user, suite_id, n, suite1, suite2, suite3, suite4, commonroom, averagebedroom) 
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?)", $user, $new_suite, $table[1], $table[2], $table[3], $table[4], 
-               $table[5], $table[6]);
-        $favorites = query("SELECT * FROM favorites");
-        
-        render("favorite_form.php", ["favorites" => $favorites]); */
     }
 ?>
