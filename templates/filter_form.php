@@ -50,8 +50,8 @@
                 print("<th>" . "Suite2" . "</th>");
                 print("<th>" . "Suite3" . "</th>");
                 print("<th>" . "Suite4" . "</th>");
-                print("<th>" . "Common Room Size" . "</th>");
-                print("<th>" . "Average Bedroom Size" . "</th>");
+                print("<th>" . "Common Room Size" . "<img src="arrow.png" alt="Arrow" width="100" height="200"> "</th>");
+                print("<th>" . "Average Bedroom Size" . "<img src="arrow.png" alt="Arrow" width="100" height="200"> "</th>");
                 print("<th>" . "Add to Favorites" . "</th>");
                 print("</tr></thead><tbody>");
                 // prints cells of table
