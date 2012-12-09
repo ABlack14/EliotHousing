@@ -1,6 +1,7 @@
 <div style="align:center">
 <ul class="nav nav-pills">
     <center>
+    <!-- links -->
     <a href="index.php">New Search</a>    
     <a href="favorite.php">Favorites</a>    
     <a href="logout.php">Log Out</a>    
@@ -12,6 +13,7 @@
         <strong>Filter Results By:</strong>
         <form name="filters">
            <strong>View All:</strong> 
+           <!-- checkboxes -->
            <input type="checkbox" id="all" onchange="viewall();" checked="checked"><br/>
            <strong>Floor:</strong>
            <input type="checkbox" id="floor1" checked="checked" value="1"> 1 
@@ -41,7 +43,7 @@
         <fieldset> 
         <table class="table table-striped" id="theTable">
             <?php
-                // prints header
+                // prints table header
                 print("<thead><tr>");
                 print("<th>" . "Number of rooms" . "</th>");      
                 print("<th>" . "Suite1" . "</th>");
@@ -68,6 +70,7 @@
                 
                 else
                 {
+                // prints table body with hidden classes
                 foreach ($table as $t)
                     {
                         print("<tr "); print("class= \"floor" . $t[8] . " ");
@@ -86,7 +89,6 @@
                         <td>
                         <div class="control-group">
                         <button type="submit" onclick="favorite( <?= $t[7] ?> )" class="btn">Add </button>
-                       
                         </div>
                         </td>
                         </tr>
@@ -100,17 +102,20 @@
 </div>
 
 <script>
+    // checkbox filter function
     $(document).ready(function() 
     {
         $(":checkbox").click(function() 
         {
             var id = $(this).attr('id');
             
+            // show rows that correspond with a checked box
             if($(this).is(":checked")) 
             {
                 $("."+id).show();
                 $(this).set_checked(false);                
             }
+            // hide rows that correspond to an unchecked box
             else
             {
                 $("."+id).hide();
@@ -121,6 +126,7 @@
         });
     }); 
     
+   // posts id of rooming option to favorite.php
    function favorite(id) 
    {
     $.ajax(
@@ -132,16 +138,19 @@
     });
    }
     
+    // Informs the user that the row was added to the favorite page
     function success() 
     {
         alert("Successfully added to favorites.");  
     }
     
+    // function to sort the table
     $(function()
     {
         $("#theTable").tablesorter();
     });
     
+    // viewall checkbox
     function viewall()
     {
         if($(this).is(":checked")) 
