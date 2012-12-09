@@ -30,6 +30,7 @@
         // iterate of each row in the favorites table to produce the table array
         foreach ($rows as $row)
         {   
+            // only one suite in the rooming option
             if ($row["suite2"] == 0 && $row["suite1"] != 0)
              {    
                 $suite1 = $row["suite1"];
@@ -48,6 +49,7 @@
                 $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg];
             }
             
+            // two suites in the rooming option
             if ($row["suite3"] == 0 && $row["suite2"] != 0)
             {    
                 $suite1 = $row["suite1"];
@@ -68,6 +70,7 @@
                 $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg];
             }
             
+            // three suites in the rooming option
             if ($row["suite4"] == 0 && $row["suite3"] != 0)
             {    
                 $suite1 = $row["suite1"];
@@ -91,6 +94,7 @@
                 $table[] = [$n, $name1, $name2, $name3, $name4, $crm, $avg];
             }
             
+            // four suites in the rooming option
             if ($row["suite4"] != 0)
             {    
                 $suite1 = $row["suite1"];
