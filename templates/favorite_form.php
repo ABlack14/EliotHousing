@@ -1,5 +1,6 @@
 <ul class="nav nav-pills">
     <center>
+    <!-- links -->
     <a href="index.php">New Search</a>    
     <a href="favorite.php">Favorites</a>    
     <a href="logout.php">Log Out</a>    
@@ -35,6 +36,7 @@
                  
                 else
                 {
+                // iterates over every row using information from $table
                 foreach ($table as $t)
                     {
                         print("<tr>");
